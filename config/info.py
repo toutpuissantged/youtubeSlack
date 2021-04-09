@@ -1,6 +1,6 @@
 
 def Config():
     return {
-    "AppName":"Startup",
+    "AppName":"YoutubeSlack",
     "AppScreen":"300x380"
 }

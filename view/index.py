@@ -24,5 +24,6 @@ class Index():
         menubar.add_cascade(label='Help', menu=Help)
 
         BaseTheme(props=props).Main()
+        VideoInfo(props).Main()
 
         return 0

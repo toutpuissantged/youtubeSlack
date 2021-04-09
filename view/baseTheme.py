@@ -1,5 +1,6 @@
 from tkinter import *
 from controllers.search import Search
+import threading
 
 class BaseTheme():
     '''
@@ -32,6 +33,9 @@ class BaseTheme():
 
     def TheButton(self):
 
-        TheButton=Button(self.root,text='lancer',width='10',border=0,bg="royalblue",activebackground='blue',fg='white',padx=10,pady=10,activeforeground='white',font="arial",command=lambda:Search().Test(self.var['curtextvar']))
+        TheButton=Button(self.root,text='lancer',width='10',border=0,bg="royalblue",activebackground='blue',fg='white',padx=10,pady=10,activeforeground='white',font="arial",command=lambda:threading.Thread(target=self.startSearch).start())
         return TheButton
+
+    def startSearch(self):
+        Search(self.var['curtextvar']).Download()
 
